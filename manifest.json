@@ -1,0 +1,18 @@
+{
+  "name": "اختبار تدريب التواصل الفعال | Effective Communication Assessment",
+  "short_name": "التواصل الفعال",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6fbfa",
+  "theme_color": "#0f766e",
+  "description": "اختبار ثنائي اللغة لتدريب مهارات التواصل الفعال.",
+  "icons": [
+    {
+      "src": "./assets/icons/communication-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

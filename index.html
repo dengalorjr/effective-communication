@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>اختبار تدريب التواصل الفعال</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/icons/communication-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/icons/communication-icon.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <section id="start-screen" class="card start-card">
+      <div class="language-switch" aria-label="اختيار اللغة">
+        <span id="language-label">اختر اللغة</span>
+        <button type="button" class="lang-btn active" data-lang="ar">العربية</button>
+        <button type="button" class="lang-btn" data-lang="en">English</button>
+      </div>
+      <div class="hero-image">
+        <!-- صورة SVG مدمجة تضمن الظهور الفوري دون الاعتماد على ملف خارجي -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="100%" height="100%">
+          <defs>
+            <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0f766e"/>
+              <stop offset="100%" stop-color="#115e59"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="250" fill="url(#bg)"/>
+          <circle cx="150" cy="125" r="70" fill="#ffffff" opacity="0.1"/>
+          <circle cx="450" cy="125" r="90" fill="#ffffff" opacity="0.08"/>
+          <!-- أيقونة التواصل -->
+          <g transform="translate(236, 61)" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#ffffff" fill-opacity="0.2" transform="scale(3) translate(-2, -2)"/>
+            <path d="M35 10a2 2 0 0 1 2 2v20l-4-4h-10a2 2 0 0 1-2-2V12a2 2 0 0 1 2-2z" fill="#ccfbf1" fill-opacity="0.4" transform="scale(2.2) translate(10, 5)"/>
+          </g>
+          <text x="300" y="195" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" opacity="0.9">EFFECTIVE COMMUNICATION TRAINING</text>
+        </svg>
+      </div>
+      <div class="title-block">
+        <span class="eyebrow" id="training-label">تدريب مهني</span>
+        <h1 id="app-title">اختبار تدريب التواصل الفعال</h1>
+        <p id="intro-text">اختبر معرفتك ومهاراتك العملية في مهارات التواصل الفعال.</p>
+      </div>
+      <label class="field-label" for="username" id="name-label">اسم المتدرب</label>
+      <input id="username" type="text" autocomplete="name" placeholder="اكتب اسمك هنا">
+      <label class="field-label" for="quiz-type" id="quiz-label">نوع الاختبار</label>
+      <select id="quiz-type">
+        <option value="pre">الاختبار القبلي</option>
+        <option value="post">الاختبار البعدي</option>
+      </select>
+      <button id="start-button" class="primary-btn" type="button">ابدأ الاختبار</button>
+      <p class="note" id="start-note">10 أسئلة • اختر الإجابة الأنسب لكل سؤال</p>
+      <button id="install-button" class="install-btn hidden" type="button">تثبيت التطبيق على الجهاز</button>
+    </section>
+
+    <section id="game-screen" class="card game-card hidden" aria-live="polite">
+      <header class="quiz-header">
+        <button id="exit-button" class="text-btn" type="button">إنهاء</button>
+        <div class="progress-wrap"><div id="progress-bar" class="progress-bar"></div></div>
+        <span id="q-counter"></span>
+      </header>
+      <div class="quiz-meta"><span id="quiz-type-label"></span><span id="timer" class="timer">30</span></div>
+      <div class="question-card">
+        <div id="q-icon" class="question-icon"></div>
+        <h2 id="q-text"></h2>
+      </div>
+      <div id="options" class="options"></div>
+    </section>
+  </main>
+  <div id="feedback" class="feedback-overlay hidden" aria-hidden="true"></div>
+  <script src="./config.js"></script>
+  <script src="./questions.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
